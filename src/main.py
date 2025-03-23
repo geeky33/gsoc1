@@ -10,7 +10,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
 # Folder where images are stored
-image_folder = "src/data/images/"
+image_folder = "data/images/"
 image_files = os.listdir(image_folder)
 
 embeddings = []
@@ -24,5 +24,5 @@ for img_file in image_files:
 embeddings_matrix = np.array(embeddings)  # Shape: (num_images, embedding_dim)
 
 # Save embeddings to a file
-np.save("src/data/embeddings.npy", embeddings_matrix)
-print(f"Saved embeddings to src/data/embeddings.npy with shape {embeddings_matrix.shape}")
+np.save("data/embeddings.npy", embeddings_matrix)
+print(f"Saved embeddings to data/embeddings.npy with shape {embeddings_matrix.shape}")

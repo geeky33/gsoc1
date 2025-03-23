@@ -12,7 +12,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model, preprocess = clip.load("ViT-B/32", device=device)
 
 # Load multiple images and compute embeddings
-image_folder = "images/"  # Folder containing images
+image_folder = "data/images/"  # Folder containing images
 image_files = os.listdir(image_folder)
 
 embeddings = []

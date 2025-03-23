@@ -2,10 +2,10 @@ import faiss
 import numpy as np
 
 # Load FAISS index
-index = faiss.read_index("src/data/faiss.index")
+index = faiss.read_index("data/faiss.index")
 
 # Load embeddings
-embeddings_matrix = np.load("src/data/embeddings.npy")
+embeddings_matrix = np.load("data/embeddings.npy")
 
 # Pick an image embedding to search for (e.g., first image)
 query_vector = embeddings_matrix[0].reshape(1, -1)  # Reshape for FAISS
